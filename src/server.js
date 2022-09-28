@@ -21,6 +21,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.get('/', (request, response) => {
+  try {
+    response.status(200).send('Proof of life');
+  } catch(e) {
+    console.log(e);
+  }
+});
+
 app.use(authRoutes);
 
 // Catchalls
