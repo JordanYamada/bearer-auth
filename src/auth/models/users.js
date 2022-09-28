@@ -15,7 +15,7 @@ const userSchema = (sequelize, DataTypes) => {
         return jwt.sign({ username: this.username }, SECRET);
       },
       set(payload) {
-        return jwt.sign(payload, API_SECRET);
+        return jwt.sign(payload, SECRET);
       },
     },
   });

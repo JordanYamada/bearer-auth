@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
     let token = authHeader[1];
 
     // const token = req.headers.authorization.split(' ').pop();
-    const validUser = await users.authenticateWithToken(token);
+    const validUser = await users.authenticateToken(token);
     if (validUser) {
       req.user = validUser;
       req.token = validUser.token;
